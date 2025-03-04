@@ -1,4 +1,3 @@
-
 //File Name EmployeeManager.java
 import java.io.*;
 import java.util.*;
@@ -108,7 +107,7 @@ public class EmployeeManager {
     private static String[] readEmployeesFromFile() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream("employees.txt")));
+                        new FileInputStream(Constants.EMPLOYEES_FILE_PATH)));
         String line = bufferedReader.readLine();
         bufferedReader.close();
         return line.split(",");
@@ -116,7 +115,7 @@ public class EmployeeManager {
 
     private static void writeEmployeesToFile(String[] employees) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(
-                new FileWriter("employees.txt"));
+                new FileWriter(Constants.EMPLOYEES_FILE_PATH));
         bufferedWriter.write(String.join(",", employees));
         bufferedWriter.close();
     }
